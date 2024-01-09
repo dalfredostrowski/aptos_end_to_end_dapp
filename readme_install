@@ -287,6 +287,23 @@ s
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client/src$ vi App.tsx
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client/src$
 ## add the address.
+### add the following change to aptos / github code: 
+
+
+      // tasks table handle
+      // const tableHandle = (todoListResource as any).data.tasks.handle;
+      // tasks table counter
+      const      tableHandle = todoListResource.tasks.handle;
+      console.log(todoListResource.tasks.handle);
+
+      //const taskCounter = (todoListResource as any).data.task_counter;
+      //const taskCounter = todoListResource.tasks.task_counter;
+      console.log("taskCounter")
+      console.log(todoListResource.task_counter);
+
+      const taskCounter = todoListResource.task_counter;
+
+
 
 reportWebVitals.ts
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client/src$ vi index.tsx
