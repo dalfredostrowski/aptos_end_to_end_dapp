@@ -39,10 +39,20 @@ function App() {
           resourceType:`${moduleAddress}::todolist::TodoList`}
       );
       setAccountHasList(true);
+      // my fix....
       // tasks table handle
-      const tableHandle = (todoListResource as any).data.tasks.handle;
+      // const tableHandle = (todoListResource as any).data.tasks.handle;
       // tasks table counter
-      const taskCounter = (todoListResource as any).data.task_counter;
+      const      tableHandle = todoListResource.tasks.handle;
+      console.log(todoListResource.tasks.handle);
+
+      // const taskCounter = (todoListResource as any).data.task_counter;
+      // const taskCounter = todoListResource.tasks.task_counter;
+      console.log("taskCounter")
+      console.log(todoListResource.task_counter);
+
+      const taskCounter = todoListResource.task_counter;
+
 
       let tasks = [];
       let counter = 1;
