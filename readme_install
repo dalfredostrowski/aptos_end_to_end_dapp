@@ -278,6 +278,8 @@ yes
 }
 ubuntu@ip-172-31-18-204:~/my-first-dapp/move$
 
+## acquire files from aptos github:
+## https://github.com/aptos-labs/aptos-core/tree/main/aptos-move/move-examples/my_first_dapp
 
 ubuntu@ip-172-31-18-204:~/my-first-dapp$ npx create-react-app client --template typescript
 
