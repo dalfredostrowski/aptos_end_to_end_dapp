@@ -314,6 +314,16 @@ ubuntu@ip-172-31-18-204:~/my-first-dapp/client$ vi package.json
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client$ rm -r node_modules/
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client$ npm install
 
+
+
+
+
+
+ref: 
+
+https://medium.com/@mariokandut/how-to-clean-up-node-modules-5aed676156db
+
+
 npm run start
 
 
