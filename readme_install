@@ -278,6 +278,52 @@ yes
 }
 ubuntu@ip-172-31-18-204:~/my-first-dapp/move$
 
+
+ubuntu@ip-172-31-22-180:~/my-first-dapp/move$ /home/ubuntu/.local/bin/aptos move test  --named-addresses todolist=0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a
+INCLUDING DEPENDENCY AptosFramework
+INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING my_todo_list
+warning: unused alias
+  ┌─ /home/ubuntu/my-first-dapp/move/sources/todolist.move:3:26
+  │
+3 │     use aptos_framework::account;
+  │                          ^^^^^^^ Unused 'use' of alias 'account'. Consider removing it
+
+Running Move unit tests
+[ PASS    ] 0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a::todolist::account_can_not_update_task
+[ FAIL    ] 0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a::todolist::test_flow
+
+Test failures:
+
+Failures in 0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a::todolist:
+
+┌── test_flow ──────
+│ error[E11001]: test failure
+│    ┌─ /home/ubuntu/.move/https___github_com_aptos-labs_aptos-core_git_mainnet/aptos-move/framework/aptos-framework/sources/event.move:19:9
+│    │
+│ 18 │     public fun emit<T: store + drop>(msg: T) {
+│    │                ---- In this function in 0x1::event
+│ 19 │         assert!(features::module_event_enabled(), std::error::invalid_state(EMODULE_EVENT_NOT_SUPPORTED));
+│    │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Test was not expected to error, but it aborted with code 196609 originating in the module 0000000000000000000000000000000000000000000000000000000000000001::event rooted here
+│
+│
+│ stack trace
+│       todolist::create_task(/home/ubuntu/my-first-dapp/move/sources/todolist.move:59)
+│       todolist::test_flow(/home/ubuntu/my-first-dapp/move/sources/todolist.move:87)
+│
+└──────────────────
+
+Test result: FAILED. Total tests: 2; passed: 1; failed: 1
+{
+  "Error": "Move unit tests failed"
+}
+ubuntu@ip-172-31-22-180:~/my-first-dapp/move$
+
+
+
+### now work on front end (user interface) 
+
 ## acquire files from aptos github:
 ## https://github.com/aptos-labs/aptos-core/tree/main/aptos-move/move-examples/my_first_dapp
 
@@ -331,5 +377,20 @@ https://medium.com/@moncayolabs/aptos-move-struct-and-its-abilities-explained-ha
 
 https://blocksecteam.medium.com/security-practices-in-move-development-2-aptos-coin-abe7ab7509fb
 
+
+troubleshooting: 
+
+see powerpoint / video reference
+
+
+
+
+https://fullnode.devnet.aptoslabs.com/v1/accounts/<wallet account>/resource/<deployed smart contract account>::todolist::TodoList
+
+
+
+https://fullnode.devnet.aptoslabs.com/v1/accounts/32d7b4d680421ab763089adc75404daa588ee3a043907a2d2359cd8ce7994cbf/resource/0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a::todolist::TodoList
+
+{"type":"0x86e1a9c1dc00011ffa2c8fa10eeb1553b48b2d3663a8d1b0334bc8ebe4c94c9a::todolist::TodoList","data":{"task_counter":"4","tasks":{"handle":"0x9f54c59aa5708e2d3da4f2e80f3ecfa9c17ca686db47909947d3a9a0537718e2"}}}
 
 
