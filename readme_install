@@ -315,7 +315,7 @@ ubuntu@ip-172-31-18-204:~/my-first-dapp/client$ rm -r node_modules/
 ubuntu@ip-172-31-18-204:~/my-first-dapp/client$ npm install
 
 
-
+npm run start
 
 
 
@@ -323,8 +323,13 @@ ref:
 
 https://medium.com/@mariokandut/how-to-clean-up-node-modules-5aed676156db
 
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
 
-npm run start
+https://mokshya.io/
+
+https://medium.com/@moncayolabs/aptos-move-struct-and-its-abilities-explained-has-drop-copy-key-store-0d7a7070f20d
+
+https://blocksecteam.medium.com/security-practices-in-move-development-2-aptos-coin-abe7ab7509fb
 
 
 
